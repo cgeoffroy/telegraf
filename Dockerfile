@@ -12,7 +12,7 @@ RUN apk update \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
     && rm /tmp/* /var/cache/apk/*
 
-RUN wget -c -P /tmp http://get.influxdb.org/telegraf/telegraf-0.10.0_linux_amd64.tar.gz \
+RUN wget -c -P /tmp http://get.influxdb.org/telegraf/telegraf-0.10.1_linux_amd64.tar.gz \
     && unzip -d /tmp /tmp/telegraf-0.10.0_linux_amd64.tar.gz \
     && export P='/tmp/tmp/package-dir-staging20160111-17178-1bzgx4y' \
     && mv ${P}/usr/bin/telegraf /usr/local/bin \
