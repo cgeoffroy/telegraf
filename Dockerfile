@@ -18,7 +18,7 @@ RUN wget -c -P /tmp http://get.influxdb.org/telegraf/telegraf-0.10.0_linux_amd64
     && mv ${P}/usr/bin/telegraf /usr/local/bin \
     && rm -rf /tmp/*
 
-ENV HOST_PROC='/' HOST_SYS='/'
+ENV HOST_PROC='/proc' HOST_SYS='/sys'
 
 ENTRYPOINT ["/usr/local/bin/telegraf"]
 
