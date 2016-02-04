@@ -13,9 +13,8 @@ RUN apk update \
     && rm /tmp/* /var/cache/apk/*
 
 RUN wget -c -P /tmp http://get.influxdb.org/telegraf/telegraf-0.10.1-1_linux_amd64.tar.gz \
-    && unzip -d /tmp /tmp/telegraf-0.10.0_linux_amd64.tar.gz \
-    && export P='/tmp/tmp/package-dir-staging20160111-17178-1bzgx4y' \
-    && mv ${P}/usr/bin/telegraf /usr/local/bin \
+    && tar -C /tmp -xzvf /tmp/telegraf-*linux_amd64.tar.gz \
+    && mv /tmp/usr/bin/telegraf /usr/local/bin \
     && rm -rf /tmp/*
 
 ENV HOST_PROC='/proc' HOST_SYS='/sys'
